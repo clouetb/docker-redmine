@@ -1,4 +1,4 @@
-IMAGE:=sameersbn/redmine
+IMAGE:=clouetb/redmine
 all: build
 
 help:
@@ -12,7 +12,7 @@ help:
 	@echo "   5. make purge       - stop and remove the container"
 
 build:
-	@docker build --tag=$(IMAGE) .
+	@docker build --platform linux/arm64 --tag=$(IMAGE) .
 
 test-release:
 	@echo Clean old run
